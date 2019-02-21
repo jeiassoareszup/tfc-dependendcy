@@ -59,6 +59,24 @@ public class BRVR085 {
             bschbutton1.setDimensions("628,42,100,21");
             bschbutton1.setText("Nova pesquisa");
             panelPadre.add(bschbutton1);
+
+//            BSCHTextField bschtextfield9 = new BSCHTextField();
+//            bschtextfield9.setName("TEST-FIELD");
+//            bschtextfield9.setDataName("MSG");
+//            bschtextfield9.setType("FILLED");
+//            bschtextfield9.setMaxChars(4);
+//            bschtextfield9.setDimensions("25,49,34,16");
+//            panelPadre.add(bschtextfield9);
+//
+//            BSCHButton bschbutton9 = new BSCHButton();
+//            bschbutton9.setName("BTN-TEST");
+//            bschbutton9.setClickProcess("com.ibm.bsch.client.launcher.ExecuteTransaction");
+//            bschbutton9.setClickProcessData("TEST");
+//            bschbutton9.setClickProcessOutData("MSG*MSG");
+//            bschbutton9.setDimensions("628,42,100,21");
+//            bschbutton9.setText("Teste");
+//            panelPadre.add(bschbutton9);
+
             BSCHTable bschtable = new BSCHTable();
             bschtable.setName("TABLA-1");
             bschtable.setButtonVisible("DOWN");

@@ -1,17 +1,18 @@
 package com.ibm.dse.gui.extensions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BSCHButton extends BSCHComponent {
     private String name;
-    private String clickProcess;
-    private String clickProcessParameters;
-    private String clickProcessData;
-    private String clickProcessOutData;
-    private String buttonType;
+    private List<Process> clickProcess = new ArrayList<>();
     private String launchAssocOperation;
     private String dimensions;
     private String text;
     private String behaviour;
     private String iconFile;
+    private String buttonType;
+    private boolean visible;
 
     public void setName(String name) {
         this.name = name;
@@ -19,46 +20,6 @@ public class BSCHButton extends BSCHComponent {
 
     public String getName() {
         return name;
-    }
-
-    public void setClickProcess(String clickProcess) {
-        this.clickProcess = clickProcess;
-    }
-
-    public String getClickProcess() {
-        return clickProcess;
-    }
-
-    public void setClickProcessParameters(String clickProcessParameters) {
-        this.clickProcessParameters = clickProcessParameters;
-    }
-
-    public String getClickProcessParameters() {
-        return clickProcessParameters;
-    }
-
-    public void setClickProcessData(String clickProcessData) {
-        this.clickProcessData = clickProcessData;
-    }
-
-    public String getClickProcessData() {
-        return clickProcessData;
-    }
-
-    public void setClickProcessOutData(String clickProcessOutData) {
-        this.clickProcessOutData = clickProcessOutData;
-    }
-
-    public String getClickProcessOutData() {
-        return clickProcessOutData;
-    }
-
-    public void setButtonType(String buttonType) {
-        this.buttonType = buttonType;
-    }
-
-    public String getButtonType() {
-        return buttonType;
     }
 
     public void setLaunchAssocOperation(String launchAssocOperation) {
@@ -99,5 +60,50 @@ public class BSCHButton extends BSCHComponent {
 
     public String getIconFile() {
         return iconFile;
+    }
+
+    private int getCurrentProcess(){
+        return this.clickProcess.size() - 1;
+    }
+
+    public void setClickProcess(String name) {
+        Process process = new Process(name);
+        this.clickProcess.add(process);
+    }
+
+    public void setClickProcessParameters(String parameters) {
+        this.clickProcess.get(getCurrentProcess()).setParameters(parameters);
+    }
+
+    public void setClickProcessData(String data) {
+        this.clickProcess.get(getCurrentProcess()).setData(data);
+    }
+
+    public void setClickProcessOutData(String outData) {
+        this.clickProcess.get(getCurrentProcess()).setOutData(outData);
+    }
+
+    public void setButtonType(String buttonType) {
+        this.buttonType = buttonType;
+    }
+
+    public String getButtonType() {
+        return buttonType;
+    }
+
+    public List<Process> getClickProcess() {
+        return clickProcess;
+    }
+
+    public void setClickProcess(List<Process> clickProcess) {
+        this.clickProcess = clickProcess;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public boolean getVisible() {
+        return visible;
     }
 }

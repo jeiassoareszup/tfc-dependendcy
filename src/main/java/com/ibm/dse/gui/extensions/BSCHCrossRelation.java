@@ -1,10 +1,13 @@
 package com.ibm.dse.gui.extensions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BSCHCrossRelation extends BSCHComponent {
     private String name;
     private String condition;
-    private String action;
-    private String elseAction;
+    private List<String> action = new ArrayList<>();
+    private List<String> elseAction = new ArrayList<>();
 
     public void setName(String name) {
         this.name = name;
@@ -22,19 +25,27 @@ public class BSCHCrossRelation extends BSCHComponent {
         return condition;
     }
 
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public String getAction() {
+    public List<String> getAction() {
         return action;
     }
 
-    public void setElseAction(String elseAction) {
-        this.elseAction = elseAction;
+    public void setAction(List<String> action) {
+        this.action = action;
     }
 
-    public String getElseAction() {
+    public void setAction(String action) {
+        this.action.add(action);
+    }
+
+    public List<String> getElseAction() {
         return elseAction;
+    }
+
+    public void setElseAction(String elseAction) {
+        this.elseAction.add(elseAction);
+    }
+
+    public void setElseAction(List<String> elseAction) {
+        this.elseAction = elseAction;
     }
 }
