@@ -12,6 +12,7 @@ public class BSCHButtonTextField extends BSCHComponent {
     private String dimensions;
     private String maxChars;
     private List<Process> clickProcess = new ArrayList<>();
+    private String tableName;
 
     public void setName(String name) {
         this.name = name;
@@ -89,5 +90,13 @@ public class BSCHButtonTextField extends BSCHComponent {
 
     public void setClickProcess(List<Process> clickProcess) {
         this.clickProcess = clickProcess;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public String getTableName() {
+        return tableName;
     }
 }

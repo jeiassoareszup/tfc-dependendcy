@@ -16,6 +16,7 @@ public class BSCHTextField extends BSCHComponent {
     private List<Process> focusLostProcess = new ArrayList<>();
     private String defaultValue;
     private String restricted;
+    private boolean visible;
 
     public void setName(String name) {
         this.name = name;
@@ -124,5 +125,13 @@ public class BSCHTextField extends BSCHComponent {
 
     public String getRestricted() {
         return restricted;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public boolean getVisible() {
+        return visible;
     }
 }
