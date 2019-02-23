@@ -12,7 +12,7 @@ public class BSCHButton extends BSCHComponent {
     private String behaviour;
     private String iconFile;
     private String buttonType;
-    private boolean visible;
+    private Boolean visible;
 
     public void setName(String name) {
         this.name = name;
@@ -99,11 +99,11 @@ public class BSCHButton extends BSCHComponent {
         this.clickProcess = clickProcess;
     }
 
-    public void setVisible(boolean visible) {
+    public void setVisible(Boolean visible) {
         this.visible = visible;
     }
 
-    public boolean getVisible() {
+    public Boolean getVisible() {
         return visible;
     }
 }
